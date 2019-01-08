@@ -9,14 +9,31 @@
    <div id="app"></div>
     <!-- built files will be auto injected -->
     <div id="calc">
-      <input v-model="atai" type="number" min=1 max=9>
-      <select v-model="typed">
-        <option disabled value="">please typed</option>
-        <option>+</option>
-        <option>-</option>
-        <option>*</option>
-        <option>/</option>
-      </select>
+      <h1>変換</h1>
+      <table border="1">
+        <thead>
+        <tr>
+          <th>loopCounts</th>
+          <th>types</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>
+            <input v-model="atai" type="number" min=1 max=9>
+          </td>
+          <td>
+            <select v-model="typed">
+              <option disabled value="">please typed</option>
+              <option>+</option>
+              <option>-</option>
+              <option>*</option>
+              <option>/</option>
+            </select>
+          </td>
+        </tr>
+        </tbody>
+      </table>
       <h1>{{message}} </h1>
       <h1>{{atai}}</h1>
       <h1>{{typed}}</h1>
@@ -36,10 +53,10 @@
           <td>{{typed}}</td>
           <td>1</td>
           <td>=</td>
-          <td v-if="typed === '+'">{{n+n}}</td>
-          <td v-else-if="typed === '-'">{{n-n}}</td>
-          <td v-else-if="typed === '*'">{{n*n}}</td>
-          <td v-else-if="typed === '/'">{{n/n}}</td>
+          <td v-if="typed === '+'">{{n+1}}</td>
+          <td v-else-if="typed === '-'">{{n-1}}</td>
+          <td v-else-if="typed === '*'">{{n*1}}</td>
+          <td v-else-if="typed === '/'">{{n/1}}</td>
         </tr>
       </tbody>
       </table>
