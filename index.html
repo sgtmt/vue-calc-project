@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>vue_calc</title>
+  </head>
+  <body>
+   <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <div id="calc">
+      <input v-model="atai" type="number" min=1 max=9>
+      <select v-model="typed">
+        <option disabled value="">please typed</option>
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+      </select>
+      <h1>{{message}} </h1>
+      <h1>{{atai}}</h1>
+      <h1>{{typed}}</h1>
+      <table border="1">
+      <thead>
+      <tr>
+        <th>数値１</th>
+        <th>記号</th>
+        <th>数値2</th>
+        <th>=</th>
+        <th>結果</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr v-for="n in parseInt(atai)">
+          <td>{{n}}</td>
+          <td>{{typed}}</td>
+          <td>1</td>
+          <td>=</td>
+          <td v-if="typed === '+'">{{n+n}}</td>
+          <td v-else-if="typed === '-'">{{n-n}}</td>
+          <td v-else-if="typed === '*'">{{n*n}}</td>
+          <td v-else-if="typed === '/'">{{n/n}}</td>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </body>
+</html>
